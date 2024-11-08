@@ -105,32 +105,42 @@ public class StarcraftGame {
 		if (select == ACTION) {
 			action(unit);
 		} else if (select == REPAIR) {
-			repair(unit);
+			if (log == SCV) {
+				repair(unit); // SCV만 선택
+			} else {
+				System.out.println("회복 불가능!");
+			}
 		}
 	}
 
 	private static void action(Unit unit) {
-		printUint();
-		int select = input("유닛 선택");
+		if (unit instanceof Unit) {
+			printUint();
+			int select = input("공격할 유닛 선택");
 
-		if (select == log) {
-			System.out.println("자신을 공격할 수 없습니다.");
-			return;
+			if (select == log) {
+				System.out.println("자신을 공격할 수 없습니다.");
+				return;
+			}
+
+			if (select == TANK) {
+
+			} else if (select == MARIN) {
+
+			} else if (select == SCV) {
+
+			} else if (select == CARRIER) {
+
+			} else if (select == CORSAIR) {
+
+			} else if (select == EXIT) {
+
+			}
+
+		} else {
+			System.out.println("공격할 수 없음");
 		}
 
-		if (select == TANK) {
-
-		} else if (select == MARIN) {
-
-		} else if (select == SCV) {
-
-		} else if (select == CARRIER) {
-
-		} else if (select == CORSAIR) {
-
-		} else if (select == EXIT) {
-
-		}
 	}
 
 	private static void repair(Unit unit) {
