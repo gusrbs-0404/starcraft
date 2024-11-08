@@ -1,0 +1,5 @@
+package Starcraft;
+
+interface Repairable {
+
+}
