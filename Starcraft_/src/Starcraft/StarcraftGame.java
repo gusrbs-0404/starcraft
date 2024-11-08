@@ -27,6 +27,7 @@ public class StarcraftGame {
 	private static Corsair corsair;
 
 	private void StarcaftGame() {
+		
 	}
 
 	private static StarcraftGame instance = new StarcraftGame();
