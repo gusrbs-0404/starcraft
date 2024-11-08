@@ -27,7 +27,6 @@ public class StarcraftGame {
 	private static Corsair corsair;
 
 	private void StarcaftGame() {
-
 	}
 
 	private static StarcraftGame instance = new StarcraftGame();
@@ -135,7 +134,7 @@ public class StarcraftGame {
 			Unit unit2 = tank;
 
 			if (unit2.hp == 0) {
-				System.out.println("유닛이 이미 사망했습니다.");
+				System.err.println("유닛이 이미 사망했습니다.");
 				return;
 			}
 
@@ -144,7 +143,7 @@ public class StarcraftGame {
 			Unit unit2 = marin;
 
 			if (unit2.hp == 0) {
-				System.out.println("유닛이 이미 사망했습니다.");
+				System.err.println("유닛이 이미 사망했습니다.");
 				return;
 			}
 
@@ -153,7 +152,7 @@ public class StarcraftGame {
 			Unit unit2 = scv;
 
 			if (unit2.hp == 0) {
-				System.out.println("유닛이 이미 사망했습니다.");
+				System.err.println("유닛이 이미 사망했습니다.");
 				return;
 			}
 
@@ -162,7 +161,7 @@ public class StarcraftGame {
 			Unit unit2 = carrier;
 
 			if (unit2.hp == 0) {
-				System.out.println("유닛이 이미 사망했습니다.");
+				System.err.println("유닛이 이미 사망했습니다.");
 				return;
 			}
 
@@ -209,14 +208,44 @@ public class StarcraftGame {
 		int select = input("회복해줄 유닛 선택");
 
 		if (select == TANK) {
+			Unit unit2 = tank;
+
+			if (unit2.hp == 0) {
+				System.err.println("유닛이 이미 사망했습니다.");
+				return;
+			}
 			scv.repaira(tank);
 		} else if (select == MARIN) {
+			Unit unit2 = marin;
+
+			if (unit2.hp == 0) {
+				System.err.println("유닛이 이미 사망했습니다.");
+				return;
+			}
 			scv.repaira(marin);
 		} else if (select == SCV) {
+			Unit unit2 = scv;
+
+			if (unit2.hp == 0) {
+				System.err.println("유닛이 이미 사망했습니다.");
+				return;
+			}
 			scv.repaira(scv);
 		} else if (select == CARRIER) {
+			Unit unit2 = carrier;
+
+			if (unit2.hp == 0) {
+				System.err.println("유닛이 이미 사망했습니다.");
+				return;
+			}
 			scv.repaira(carrier);
 		} else if (select == CORSAIR) {
+			Unit unit2 = corsair;
+
+			if (unit2.hp == 0) {
+				System.err.println("유닛이 이미 사망했습니다.");
+				return;
+			}
 			scv.repaira(corsair);
 		}
 	}
