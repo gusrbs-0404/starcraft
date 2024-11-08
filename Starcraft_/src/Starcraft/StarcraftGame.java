@@ -13,6 +13,10 @@ public class StarcraftGame {
 	}
 
 	public static void run() {
+		newUnit();
+	}
+	
+	private static void newUnit() {
 		Tank tank = new Tank();
 		Marin marine = new Marin();
 		SCV scv = new SCV();
