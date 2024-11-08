@@ -13,6 +13,10 @@ public class StarcraftGame {
 	}
 
 	public static void run() {
-
+		Tank tank = new Tank();
+		Marin marine = new Marin();
+		SCV scv = new SCV();
+		Carrier carrier = new Carrier();
+		Corsair corsair = new Corsair();
 	}
 }
