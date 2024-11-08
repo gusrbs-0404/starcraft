@@ -17,7 +17,7 @@ class Tank extends GroundUnit implements Repairable {
 	@Override
 	public void repaira(Unit unit) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
@@ -31,7 +31,7 @@ class Marin extends GroundUnit implements Repairable {
 	@Override
 	public void repaira(Unit unit) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
@@ -41,10 +41,9 @@ class SCV extends GroundUnit implements Repairable {
 	SCV() {
 		super("SCV", 50, 50);
 	}
-	
+
 	@Override
 	public void repaira(Unit unit) {
-		unit.hp = 10;
 		if (unit instanceof Unit) {
 			Unit target = (Unit) unit;
 			while (target.hp < target.MAX_HP) {

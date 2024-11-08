@@ -144,7 +144,20 @@ public class StarcraftGame {
 	}
 
 	private static void repair(Unit unit) {
+		printUint();
+		int select = input("회복해줄 유닛 선택");
 
+		if (select == TANK) {
+			scv.repaira(tank);
+		} else if (select == MARIN) {
+			scv.repaira(marine);
+		} else if (select == SCV) {
+			scv.repaira(scv);
+		} else if (select == CARRIER) {
+			scv.repaira(carrier);
+		} else if (select == CORSAIR) {
+			scv.repaira(corsair);
+		}
 	}
 
 	private static int input(String msg) {
