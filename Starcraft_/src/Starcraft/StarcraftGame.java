@@ -20,6 +20,12 @@ public class StarcraftGame {
 	private static boolean isUint = true;
 	private static boolean isAction = true;
 
+	static Tank tank;
+	static Marin marine;
+	static SCV scv;
+	static Carrier carrier;
+	static Corsair corsair;
+
 	private void StarcaftGame() {
 
 	}
@@ -38,15 +44,19 @@ public class StarcraftGame {
 	}
 
 	public static void newUnit() {
-		Tank tank = new Tank();
+		tank = new Tank();
 		System.out.println(tank);
-		Marin marine = new Marin();
+
+		marine = new Marin();
 		System.out.println(marine);
-		SCV scv = new SCV();
+
+		scv = new SCV();
 		System.out.println(scv);
-		Carrier carrier = new Carrier();
+
+		carrier = new Carrier();
 		System.out.println(carrier);
-		Corsair corsair = new Corsair();
+
+		corsair = new Corsair();
 		System.out.println(corsair);
 	}
 
@@ -56,17 +66,16 @@ public class StarcraftGame {
 		System.out.println("3)SCV");
 		System.out.println("4)케리어");
 		System.out.println("5)커세어");
-		System.out.println("0)종료");
 	}
 
 	private static void game() {
 		printUint();
+		System.out.println("0)종료");
 		int select = input("유닛 선택");
 
 		if (select == TANK) {
 			log = TANK;
 			actionMenu();
-
 		} else if (select == MARIN) {
 			log = MARIN;
 			actionMenu();
@@ -101,7 +110,27 @@ public class StarcraftGame {
 	}
 
 	private static void action() {
-		System.out.println();
+		printUint();
+		int select = input("유닛 선택");
+
+		if (select == log) {
+			System.out.println("자신을 공격할 수 없습니다.");
+			return;
+		}
+
+		if (select == TANK) {
+
+		} else if (select == MARIN) {
+
+		} else if (select == SCV) {
+
+		} else if (select == CARRIER) {
+
+		} else if (select == CORSAIR) {
+
+		} else if (select == EXIT) {
+
+		}
 	}
 
 	private static void repair() {
