@@ -117,7 +117,7 @@ public class StarcraftGame {
 			if (log == SCV) {
 				repair(unit); // SCV만 선택
 			} else {
-				System.err.println("회복 불가능!");
+				System.err.println("SCV만 선택 가능!!");
 			}
 		}
 	}
