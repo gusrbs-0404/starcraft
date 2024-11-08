@@ -9,7 +9,7 @@ abstract class AirUnit extends Unit {
 	abstract void fluing();
 }
 
-class Carrier extends AirUnit {
+class Carrier extends AirUnit implements Attackble {
 
 	Carrier() {
 		super("CARRIER", 250, 150);
@@ -20,9 +20,15 @@ class Carrier extends AirUnit {
 		System.out.println("공중 유닛!");
 	}
 
+	@Override
+	public void attack(Unit unit) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
 
-class Corsair extends AirUnit {
+class Corsair extends AirUnit implements Attackble {
 
 	Corsair() {
 		super("CORSAIR", 150, 100);
@@ -31,6 +37,12 @@ class Corsair extends AirUnit {
 	@Override
 	void fluing() {
 		System.out.println("공중 유닛!");
+	}
+
+	@Override
+	public void attack(Unit unit) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
