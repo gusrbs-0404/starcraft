@@ -13,8 +13,6 @@ abstract class Unit {
 		this.hp = hp;
 		this.mp = mp;
 		this.name = name;
-		
-		System.out.println(name + "이 생성되었습니다.");
 	}
 	
 	@Override
