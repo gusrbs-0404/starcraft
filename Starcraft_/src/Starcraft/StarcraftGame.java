@@ -101,6 +101,11 @@ public class StarcraftGame {
 	}
 
 	private static void actionMenu(Unit unit) {
+		if (unit.hp == 0) {
+			System.err.println("유닛이 이미 사망했습니다.");
+			return;
+		}
+
 		System.out.println("1.공격");
 		System.out.println("2.회복");
 
@@ -128,20 +133,51 @@ public class StarcraftGame {
 
 		if (select == TANK) {
 			Unit unit2 = tank;
+
+			if (unit2.hp == 0) {
+				System.out.println("유닛이 이미 사망했습니다.");
+				return;
+			}
+
 			attack(unit, unit2);
 		} else if (select == MARIN) {
 			Unit unit2 = marin;
+
+			if (unit2.hp == 0) {
+				System.out.println("유닛이 이미 사망했습니다.");
+				return;
+			}
+
 			attack(unit, unit2);
 		} else if (select == SCV) {
 			Unit unit2 = scv;
+
+			if (unit2.hp == 0) {
+				System.out.println("유닛이 이미 사망했습니다.");
+				return;
+			}
+
 			attack(unit, unit2);
 		} else if (select == CARRIER) {
 			Unit unit2 = carrier;
+
+			if (unit2.hp == 0) {
+				System.out.println("유닛이 이미 사망했습니다.");
+				return;
+			}
+
 			attack(unit, unit2);
 		} else if (select == CORSAIR) {
 			Unit unit2 = corsair;
+
+			if (unit2.hp == 0) {
+				System.err.println("유닛이 이미 사망했습니다.");
+				return;
+			}
+
 			attack(unit, unit2);
 		}
+
 	}
 
 	private static void attack(Unit unit, Unit unit2) {
@@ -153,6 +189,18 @@ public class StarcraftGame {
 			p1Unit.mp -= 10;
 			p2Unit.hp -= 10;
 			System.out.println("공격 성공!");
+		}
+
+		dieUinut(unit2);
+	}
+
+	private static void dieUinut(Unit unit2) {
+		Unit p2Unit = (Unit) unit2;
+
+		if (p2Unit.hp == 0) {
+			System.err.println(p2Unit.name + " 유닛 사망!!");
+			p2Unit.hp = 0;
+			p2Unit.mp = 0;
 		}
 	}
 
