@@ -75,19 +75,19 @@ public class StarcraftGame {
 
 		if (select == TANK) {
 			log = TANK;
-			actionMenu();
+			actionMenu(tank);
 		} else if (select == MARIN) {
 			log = MARIN;
-			actionMenu();
+			actionMenu(marine);
 		} else if (select == SCV) {
 			log = SCV;
-			actionMenu();
+			actionMenu(scv);
 		} else if (select == CARRIER) {
 			log = CARRIER;
-			actionMenu();
+			actionMenu(carrier);
 		} else if (select == CORSAIR) {
 			log = CORSAIR;
-			actionMenu();
+			actionMenu(corsair);
 		} else if (select == EXIT) {
 			System.out.println("스타크래프트 종료!");
 			isUint = false;
@@ -96,20 +96,20 @@ public class StarcraftGame {
 		log = -1;
 	}
 
-	private static void actionMenu() {
+	private static void actionMenu(Unit unit) {
 		System.out.println("1.공격");
 		System.out.println("2.회복");
 
 		int select = input("메뉴 선택");
 
 		if (select == ACTION) {
-			action();
+			action(unit);
 		} else if (select == REPAIR) {
-			repair();
+			repair(unit);
 		}
 	}
 
-	private static void action() {
+	private static void action(Unit unit) {
 		printUint();
 		int select = input("유닛 선택");
 
@@ -133,7 +133,7 @@ public class StarcraftGame {
 		}
 	}
 
-	private static void repair() {
+	private static void repair(Unit unit) {
 
 	}
 
