@@ -41,7 +41,6 @@ class Corsair extends AirUnit implements Attackble {
 
 	@Override
 	public void attack(Unit unit) {
-		// TODO Auto-generated method stub
 
 	}
 
