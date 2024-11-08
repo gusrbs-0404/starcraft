@@ -33,16 +33,21 @@ public class StarcraftGame {
 	public static void run() {
 		newUnit();
 		while (isUint) {
-			printUint();
+			game();
 		}
 	}
 
-	private static void newUnit() {
+	public static void newUnit() {
 		Tank tank = new Tank();
+		System.out.println(tank);
 		Marin marine = new Marin();
+		System.out.println(marine);
 		SCV scv = new SCV();
+		System.out.println(scv);
 		Carrier carrier = new Carrier();
+		System.out.println(carrier);
 		Corsair corsair = new Corsair();
+		System.out.println(corsair);
 	}
 
 	private static void printUint() {
@@ -52,7 +57,10 @@ public class StarcraftGame {
 		System.out.println("4)케리어");
 		System.out.println("5)커세어");
 		System.out.println("0)종료");
+	}
 
+	private static void game() {
+		printUint();
 		int select = input("유닛 선택");
 
 		if (select == TANK) {
@@ -93,7 +101,7 @@ public class StarcraftGame {
 	}
 
 	private static void action() {
-
+		System.out.println();
 	}
 
 	private static void repair() {
