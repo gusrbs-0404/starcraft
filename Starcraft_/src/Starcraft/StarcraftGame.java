@@ -45,18 +45,21 @@ public class StarcraftGame {
 
 	public static void newUnit() {
 		tank = new Tank();
-		System.out.println(tank);
 
 		marin = new Marin();
-		System.out.println(marin);
 
 		scv = new SCV();
-		System.out.println(scv);
 
 		carrier = new Carrier();
-		System.out.println(carrier);
 
 		corsair = new Corsair();
+	}
+
+	private static void printUint() {
+		System.out.println(tank);
+		System.out.println(marin);
+		System.out.println(scv);
+		System.out.println(carrier);
 		System.out.println(corsair);
 	}
 
@@ -69,6 +72,7 @@ public class StarcraftGame {
 	}
 
 	private static void game() {
+		printUint();
 		printUintMenu();
 		System.out.println("0)종료");
 		int select = input("유닛 선택");
