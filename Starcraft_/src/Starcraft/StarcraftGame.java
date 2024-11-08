@@ -21,7 +21,7 @@ public class StarcraftGame {
 	private static boolean isAction = true;
 
 	static Tank tank;
-	static Marin marine;
+	static Marin marin;
 	static SCV scv;
 	static Carrier carrier;
 	static Corsair corsair;
@@ -47,8 +47,8 @@ public class StarcraftGame {
 		tank = new Tank();
 		System.out.println(tank);
 
-		marine = new Marin();
-		System.out.println(marine);
+		marin = new Marin();
+		System.out.println(marin);
 
 		scv = new SCV();
 		System.out.println(scv);
@@ -78,7 +78,7 @@ public class StarcraftGame {
 			actionMenu(tank);
 		} else if (select == MARIN) {
 			log = MARIN;
-			actionMenu(marine);
+			actionMenu(marin);
 		} else if (select == SCV) {
 			log = SCV;
 			actionMenu(scv);
@@ -114,33 +114,42 @@ public class StarcraftGame {
 	}
 
 	private static void action(Unit unit) {
-		if (unit instanceof Unit) {
-			printUint();
-			int select = input("공격할 유닛 선택");
+		printUint();
+		int select = input("공격할 유닛 선택");
 
-			if (select == log) {
-				System.out.println("자신을 공격할 수 없습니다.");
-				return;
-			}
-
-			if (select == TANK) {
-
-			} else if (select == MARIN) {
-
-			} else if (select == SCV) {
-
-			} else if (select == CARRIER) {
-
-			} else if (select == CORSAIR) {
-
-			} else if (select == EXIT) {
-
-			}
-
-		} else {
-			System.out.println("공격할 수 없음");
+		if (select == log) {
+			System.out.println("자신을 공격할 수 없습니다.");
+			return;
 		}
 
+		if (select == TANK) {
+			Unit unit2 = tank;
+			attack(unit, unit2);
+		} else if (select == MARIN) {
+			Unit unit2 = marin;
+			attack(unit, unit2);
+		} else if (select == SCV) {
+			Unit unit2 = scv;
+			attack(unit, unit2);
+		} else if (select == CARRIER) {
+			Unit unit2 = carrier;
+			attack(unit, unit2);
+		} else if (select == CORSAIR) {
+			Unit unit2 = corsair;
+			attack(unit, unit2);
+		}
+	}
+
+	private static void attack(Unit unit, Unit unit2) {
+		if (unit instanceof Unit && unit2 instanceof Unit) {
+			Unit p1Unit = (Unit) unit;
+
+			Unit p2Unit = (Unit) unit2;
+
+			p1Unit.mp -= 10;
+			p2Unit.hp -= 10;
+			System.out.println("공격 성공!");
+		}
 	}
 
 	private static void repair(Unit unit) {
@@ -150,7 +159,7 @@ public class StarcraftGame {
 		if (select == TANK) {
 			scv.repaira(tank);
 		} else if (select == MARIN) {
-			scv.repaira(marine);
+			scv.repaira(marin);
 		} else if (select == SCV) {
 			scv.repaira(scv);
 		} else if (select == CARRIER) {
