@@ -1,6 +1,6 @@
 package Starcraft;
 
-public class GroundUnit {
+abstract class GroundUnit extends Unit{
 
 }
 

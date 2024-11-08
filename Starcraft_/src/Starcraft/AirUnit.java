@@ -1,5 +1,5 @@
 package Starcraft;
 
-public class AirUnit {
+abstract class AirUnit extends Unit {
 
 }

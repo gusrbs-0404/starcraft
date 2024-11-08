@@ -1,5 +1,5 @@
 package Starcraft;
 
-public class Unit {
+abstract class Unit {
 
 }
