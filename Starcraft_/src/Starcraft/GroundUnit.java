@@ -8,7 +8,7 @@ abstract class GroundUnit extends Unit {
 
 }
 
-class Tank extends GroundUnit implements Repairable {
+class Tank extends GroundUnit implements Repairable, Attackble {
 
 	Tank() {
 		super("TANK", 200, 100);
@@ -20,9 +20,15 @@ class Tank extends GroundUnit implements Repairable {
 
 	}
 
+	@Override
+	public void attack(Unit unit) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 
-class Marin extends GroundUnit implements Repairable {
+class Marin extends GroundUnit implements Repairable, Attackble {
 
 	Marin() {
 		super("MARIN", 100, 80);
@@ -34,9 +40,15 @@ class Marin extends GroundUnit implements Repairable {
 
 	}
 
+	@Override
+	public void attack(Unit unit) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 
-class SCV extends GroundUnit implements Repairable {
+class SCV extends GroundUnit implements Repairable, Attackble{
 
 	SCV() {
 		super("SCV", 50, 50);
@@ -57,6 +69,12 @@ class SCV extends GroundUnit implements Repairable {
 			System.out.println("<<< 회복 완료 >>> ");
 		}
 
+	}
+
+	@Override
+	public void attack(Unit unit) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
