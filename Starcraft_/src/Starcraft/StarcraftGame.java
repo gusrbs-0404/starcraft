@@ -112,7 +112,7 @@ public class StarcraftGame {
 			if (log == SCV) {
 				repair(unit); // SCV만 선택
 			} else {
-				System.out.println("회복 불가능!");
+				System.err.println("회복 불가능!");
 			}
 		}
 	}
@@ -122,7 +122,7 @@ public class StarcraftGame {
 		int select = input("공격할 유닛 선택");
 
 		if (select == log) {
-			System.out.println("자신을 공격할 수 없습니다.");
+			System.err.println("자신을 공격할 수 없습니다.");
 			return;
 		}
 
