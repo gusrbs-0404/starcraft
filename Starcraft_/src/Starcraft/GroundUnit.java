@@ -23,7 +23,7 @@ class Tank extends GroundUnit implements Repairable, Attackble {
 	@Override
 	public void attack(Unit unit) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
@@ -43,12 +43,12 @@ class Marin extends GroundUnit implements Repairable, Attackble {
 	@Override
 	public void attack(Unit unit) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
 
-class SCV extends GroundUnit implements Repairable, Attackble{
+class SCV extends GroundUnit implements Repairable, Attackble {
 
 	SCV() {
 		super("SCV", 50, 50);
@@ -59,14 +59,23 @@ class SCV extends GroundUnit implements Repairable, Attackble{
 		if (unit instanceof Unit) {
 			Unit target = (Unit) unit;
 			while (target.hp < target.MAX_HP) {
-				System.out.println(target + "|| 회복중");
+				System.out.println(target + "|| [HP] 회복중");
 				target.hp++;
+				try {
+					Thread.sleep(300);
+				} catch (Exception e) {
+				}
+			}
+
+			while (target.mp < target.MAX_MP) {
+				System.out.println(target + "|| [MP] 회복중");
 				target.mp++;
 				try {
 					Thread.sleep(300);
 				} catch (Exception e) {
 				}
 			}
+
 			System.out.println("<<< 회복 완료 >>> ");
 		}
 
@@ -75,7 +84,7 @@ class SCV extends GroundUnit implements Repairable, Attackble{
 	@Override
 	public void attack(Unit unit) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
