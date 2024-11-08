@@ -3,6 +3,8 @@ package Starcraft;
 import java.util.Scanner;
 
 public class StarcraftGame {
+	private final static int ACTION = 1;
+	private final static int REPAIR = 2;
 
 	private final static int TANK = 1;
 	private final static int MARIN = 2;
@@ -32,10 +34,6 @@ public class StarcraftGame {
 		newUnit();
 		while (isUint) {
 			printUint();
-
-			while (isAction) {
-				actionMenu();
-			}
 		}
 	}
 
@@ -59,21 +57,46 @@ public class StarcraftGame {
 
 		if (select == TANK) {
 			log = TANK;
+			actionMenu();
+
 		} else if (select == MARIN) {
 			log = MARIN;
+			actionMenu();
 		} else if (select == SCV) {
 			log = SCV;
+			actionMenu();
 		} else if (select == CARRIER) {
 			log = CARRIER;
+			actionMenu();
 		} else if (select == CORSAIR) {
 			log = CORSAIR;
+			actionMenu();
 		} else if (select == EXIT) {
 			System.out.println("스타크래프트 종료!");
 			isUint = false;
 		}
+
+		log = -1;
 	}
 
 	private static void actionMenu() {
+		System.out.println("1.공격");
+		System.out.println("2.회복");
+
+		int select = input("메뉴 선택");
+
+		if (select == ACTION) {
+			action();
+		} else if (select == REPAIR) {
+			repair();
+		}
+	}
+
+	private static void action() {
+
+	}
+
+	private static void repair() {
 
 	}
 
