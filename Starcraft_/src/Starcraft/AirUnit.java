@@ -6,4 +6,5 @@ abstract class AirUnit extends Unit {
 		super(name, hp, mp);
 	}
 
+	abstract void fluing();
 }
