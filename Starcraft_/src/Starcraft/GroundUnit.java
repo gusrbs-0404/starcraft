@@ -61,6 +61,7 @@ class SCV extends GroundUnit implements Repairable, Attackble{
 			while (target.hp < target.MAX_HP) {
 				System.out.println(target + "|| 회복중");
 				target.hp++;
+				target.mp++;
 				try {
 					Thread.sleep(300);
 				} catch (Exception e) {
