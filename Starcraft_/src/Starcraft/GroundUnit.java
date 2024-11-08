@@ -8,7 +8,7 @@ abstract class GroundUnit extends Unit{
 	
 }
 
-class Tank extends GroundUnit{
+class Tank extends GroundUnit implements Repairable{
 
 	Tank() {
 		super("TANK", 200, 100);
@@ -16,7 +16,7 @@ class Tank extends GroundUnit{
 	
 }
 
-class Marin extends GroundUnit{
+class Marin extends GroundUnit implements Repairable{
 
 	Marin() {
 		super("MARIN", 100, 80);
@@ -24,7 +24,7 @@ class Marin extends GroundUnit{
 
 }
 
-class SCV extends GroundUnit{
+class SCV extends GroundUnit implements Repairable{
 
 	SCV() {
 		super("SCV", 50, 50);
