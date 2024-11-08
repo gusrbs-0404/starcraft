@@ -20,11 +20,11 @@ public class StarcraftGame {
 	private static boolean isUint = true;
 	private static boolean isAction = true;
 
-	static Tank tank;
-	static Marin marin;
-	static SCV scv;
-	static Carrier carrier;
-	static Corsair corsair;
+	private static Tank tank;
+	private static Marin marin;
+	private static SCV scv;
+	private static Carrier carrier;
+	private static Corsair corsair;
 
 	private void StarcaftGame() {
 
@@ -43,7 +43,7 @@ public class StarcraftGame {
 		}
 	}
 
-	public static void newUnit() {
+	private static void newUnit() {
 		tank = new Tank();
 
 		marin = new Marin();
