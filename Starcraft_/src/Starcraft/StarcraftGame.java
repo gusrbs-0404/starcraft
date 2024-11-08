@@ -1,12 +1,22 @@
 package Starcraft;
 
+import java.util.Scanner;
+
 public class StarcraftGame {
 
-	final int TANK = 1;
-	final int Marin = 2;
-	final int SCV = 3;
-	final int Carrier = 4;
-	final int Corsair = 5;
+	private final static int TANK = 1;
+	private final static int MARIN = 2;
+	private final static int SCV = 3;
+	private final static int CARRIER = 4;
+	private final static int CORSAIR = 5;
+	private final static int EXIT = 0;
+
+	private static Scanner scan = new Scanner(System.in);
+
+	private static int log = -1;
+
+	private static boolean isUint = true;
+	private static boolean isAction = true;
 
 	private void StarcaftGame() {
 
@@ -20,8 +30,12 @@ public class StarcraftGame {
 
 	public static void run() {
 		newUnit();
-		while (true) {
+		while (isUint) {
 			printUint();
+
+			while (isAction) {
+				actionMenu();
+			}
 		}
 	}
 
@@ -39,6 +53,43 @@ public class StarcraftGame {
 		System.out.println("3)SCV");
 		System.out.println("4)케리어");
 		System.out.println("5)커세어");
+		System.out.println("0)종료");
+
+		int select = input("유닛 선택");
+
+		if (select == TANK) {
+			log = TANK;
+		} else if (select == MARIN) {
+			log = MARIN;
+		} else if (select == SCV) {
+			log = SCV;
+		} else if (select == CARRIER) {
+			log = CARRIER;
+		} else if (select == CORSAIR) {
+			log = CORSAIR;
+		} else if (select == EXIT) {
+			System.out.println("스타크래프트 종료!");
+			isUint = false;
+		}
 	}
 
+	private static void actionMenu() {
+
+	}
+
+	private static int input(String msg) {
+		System.out.print(msg + " : ");
+		String input = "";
+
+		input = scan.nextLine();
+		int number = -1;
+		try {
+			number = Integer.parseInt(input);
+			return number;
+		} catch (Exception e) {
+			System.err.println("숫자로 입력하세요.");
+		}
+
+		return number;
+	}
 }
