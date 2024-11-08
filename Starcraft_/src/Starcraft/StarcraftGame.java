@@ -60,7 +60,7 @@ public class StarcraftGame {
 		System.out.println(corsair);
 	}
 
-	private static void printUint() {
+	private static void printUintMenu() {
 		System.out.println("1)탱크");
 		System.out.println("2)마린");
 		System.out.println("3)SCV");
@@ -69,7 +69,7 @@ public class StarcraftGame {
 	}
 
 	private static void game() {
-		printUint();
+		printUintMenu();
 		System.out.println("0)종료");
 		int select = input("유닛 선택");
 
@@ -114,7 +114,7 @@ public class StarcraftGame {
 	}
 
 	private static void action(Unit unit) {
-		printUint();
+		printUintMenu();
 		int select = input("공격할 유닛 선택");
 
 		if (select == log) {
@@ -153,7 +153,7 @@ public class StarcraftGame {
 	}
 
 	private static void repair(Unit unit) {
-		printUint();
+		printUintMenu();
 		int select = input("회복해줄 유닛 선택");
 
 		if (select == TANK) {
